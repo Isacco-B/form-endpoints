@@ -1,14 +1,14 @@
-import { check } from "express-validator";
+import { body } from "express-validator";
 
 const formValidator = [
-  check("name")
+  body("name")
     .notEmpty()
     .withMessage("Name is required")
     .isString()
     .withMessage("Name must be a string")
     .escape()
     .trim(),
-  check("email")
+  body("email")
     .notEmpty()
     .withMessage("Email is required")
     .isEmail()
@@ -16,7 +16,7 @@ const formValidator = [
     .normalizeEmail()
     .escape()
     .trim(),
-  check("message")
+  body("message")
     .notEmpty()
     .escape()
     .withMessage("Message is required")
