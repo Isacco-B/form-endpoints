@@ -1,4 +1,4 @@
-# Safe Note
+# Form Endpoints
 
 - **Form Endpoints** provides simple and hassle-free endpoints for your HTML forms. Just connect your form to our endpoint, and we'll handle the rest by emailing you the submissions. No need for PHP, JavaScript, or any backend code.
 - Demo: https://demo14.isaccobertoli.com/
