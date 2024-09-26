@@ -26,7 +26,7 @@ export const languages = {
   <label for="message">Message*</label>
   <textarea name="message" required></textarea>
 
-  <button id="submitButton" type="submit">Submit</button>
+  <button type="submit">Submit</button>
 </form>`,
   },
   json_form: {
