@@ -157,7 +157,7 @@ export default function App() {
           title="1. CONNECT YOUR FORM"
           description="Pointing the action-attribute of your form to our URL will enable
             submissions to be sent to your email address."
-          code={`<form action="https://formsubmit.co/your@email.com" method="POST" />`}
+          code={`<form id="contactForm" method="POST" action="https://demo13.isaccobertoli.com/your@email.com">`}
         />
         <InfoBlock
           title="2. ADD NAME ATTRIBUTES"
@@ -188,7 +188,7 @@ export default function App() {
           description={`By default, after submitting a form the user is shown the FormEndpoints
             "Thank You" page. You can provide an alternative URL for "Thank You"
             page.`}
-          code={`<input type="hidden" name="_next" value="https://yourdomain.co/thanks.html">`}
+          code={`<input type="hidden" name="_next" value="https://yourdomain.com/thanks.html">`}
         />
         <InfoBlock
           title="_success"
