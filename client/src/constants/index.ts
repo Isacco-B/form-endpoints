@@ -1,5 +1,37 @@
 export const languages = {
-  javascript: `<script>
+  html_form: {
+    css: `<style>
+  #contactForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 500px;
+  }
+  #contactForm input,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #ccc;
+  }
+</style>`,
+    html: `<form id="contactForm" method="POST" action="https://demo13.isaccobertoli.com/your@email.com">
+  <label for="name">Name*</label>
+  <input name="name" required/>
+
+  <label for="email">Email*</label>
+  <input name="email" type="email" required/>
+
+  <label for="message">Message*</label>
+  <textarea name="message" required></textarea>
+
+  <button id="submitButton" type="submit">Submit</button>
+</form>`,
+  },
+  json_form: {
+    javascript: `<script>
+  const BASEURL = "https://demo13.isaccobertoli.com/your@email.com";
   const form = document.getElementById("contactForm");
   const responseDiv = document.getElementById("responseMessage");
   const submitButton = document.getElementById("submitButton");
@@ -14,17 +46,14 @@ export const languages = {
     submitButton.disabled = true;
 
     try {
-      const response = await fetch(
-        "https://example.com/example@example.com",
-        {
-          method: "POST",
-          body: data,
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            Accept: "application/json",
-          },
-        }
-      );
+      const response = await fetch(BASEURL, {
+        method: "POST",
+        body: data,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+        },
+      });
 
       if (response.ok) {
         const result = await response.json();
@@ -49,12 +78,11 @@ export const languages = {
     }
   });
 </script>`,
-  css: `<style>
+    css: `<style>
   .loading {
     cursor: not-allowed;
     opacity: 0.6;
   }
-
   .loading::after {
     content: "";
     display: inline-flex;
@@ -67,7 +95,6 @@ export const languages = {
     animation: spin 1s linear infinite;
     margin-left: 8px;
   }
-
   @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -76,14 +103,12 @@ export const languages = {
       transform: rotate(360deg);
     }
   }
-
   #contactForm {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     max-width: 500px;
   }
-
   #responseMessage {
     display: none;
     padding: 15px;
@@ -91,21 +116,18 @@ export const languages = {
     font-size: 14px;
     text-align: center;
   }
-
   .error {
     color: #b91c1c;
     border-color: #b91c1c;
     border-style: solid;
     border-width: 1px;
   }
-
   .success {
     color: #047857;
     border-color: #047857;
     border-style: solid;
     border-width: 1px;
   }
-
   #contactForm input,
   textarea {
     display: block;
@@ -115,20 +137,18 @@ export const languages = {
     border: 1px solid #ccc;
   }
 </style>`,
-  html: `<form id="contactForm" method="POST" action="https://example.com/example@example.com"></form>
-  <div>
-    <label for="name">Name*</label>
-    <input name="name" required/>
-  </div>
-  <div>
-    <label for="email">Email*</label>
-    <input name="email" type="email" required/>
-  </div>
-  <div>
-    <label for="message">Message*</label>
-    <textarea name="message" required></textarea>
-  </div>
+    html: `<form id="contactForm">
+  <label for="name">Name*</label>
+  <input name="name" required/>
+
+  <label for="email">Email*</label>
+  <input name="email" type="email" required/>
+
+  <label for="message">Message*</label>
+  <textarea name="message" required></textarea>
+
   <div id="responseMessage"></div>
   <button id="submitButton" type="submit">Submit</button>
 </form>`,
+  },
 };
