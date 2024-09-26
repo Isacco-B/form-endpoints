@@ -22,12 +22,16 @@ export default function App() {
       </div>
       <div className="mt-10">
         <Tabs defaultValue="html" className="space-y-4">
-          <TabsList className="space-x-4 font-poppins">
-            <TabsTrigger value="html">HTML Response (Page Reload)</TabsTrigger>
-            <TabsTrigger value="json">
-              JSON Response (No Page Reload)
-            </TabsTrigger>
-          </TabsList>
+          <div className="text-center md:text-left">
+            <TabsList className="flex-col h-auto gap-2 md:flex-row">
+              <TabsTrigger value="html">
+                HTML Response (Page Reload)
+              </TabsTrigger>
+              <TabsTrigger value="json">
+                JSON Response (No Page Reload)
+              </TabsTrigger>
+            </TabsList>
+          </div>
 
           <TabsContent value="html">
             <Tabs defaultValue="html-form" className="space-y-4">
@@ -43,6 +47,9 @@ export default function App() {
                   language={"html"}
                   showLineNumbers={true}
                   theme={dracula}
+                  customStyle={{
+                    overflow: "auto",
+                  }}
                 />
               </TabsContent>
               <TabsContent value="html-style">
@@ -51,6 +58,9 @@ export default function App() {
                   language={"html"}
                   showLineNumbers={true}
                   theme={dracula}
+                  customStyle={{
+                    overflow: "auto",
+                  }}
                 />
               </TabsContent>
             </Tabs>
@@ -95,6 +105,9 @@ export default function App() {
                   language={"html"}
                   showLineNumbers={true}
                   theme={dracula}
+                  customStyle={{
+                    overflow: "auto",
+                  }}
                 />
               </TabsContent>
               <TabsContent value="json-style">
@@ -103,6 +116,9 @@ export default function App() {
                   language={"html"}
                   showLineNumbers={true}
                   theme={dracula}
+                  customStyle={{
+                    overflow: "auto",
+                  }}
                 />
               </TabsContent>
               <TabsContent value="json-javascript">
@@ -111,6 +127,9 @@ export default function App() {
                   language={"javascript"}
                   showLineNumbers={true}
                   theme={dracula}
+                  customStyle={{
+                    overflow: "auto",
+                  }}
                 />
               </TabsContent>
             </Tabs>
