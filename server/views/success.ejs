@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
     <title>Thank you for getting in touch!</title>
     <style>
       body {
@@ -41,10 +41,14 @@
   <body>
     <div>
       <h1><%= title %></h1>
+      <p><%= message %></p>
+
+      <% if (origin && origin !== 'undefined') { %>
       <p>
-        <%= message %> Return to original site:
+        Return to original site:
         <a href="<%= origin %>"><%= origin %></a>
       </p>
+      <% } %>
     </div>
   </body>
 </html>
