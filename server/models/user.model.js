@@ -2,7 +2,7 @@ import { Sequelize } from "sequelize";
 
 const sequelize = new Sequelize({
   dialect: "sqlite",
-  storage: "./database/users.db",
+  storage: "./database.users.db",
 });
 
 const User = sequelize.define("User", {
@@ -22,6 +22,8 @@ const User = sequelize.define("User", {
 });
 
 
-sequelize.sync();
+const initDb = async () => {
+  await sequelize.sync();
+};
 
-export default User;
+export { User, initDb };
